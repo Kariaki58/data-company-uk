@@ -62,7 +62,9 @@ export function AppFooter() {
                 </li>
                 <li className="flex items-center space-x-2">
                   <Phone className="h-4 w-4 shrink-0" />
-                  <span>+44 123 456 7890</span>
+                  <a href="tel:+441234567890" className="hover:underline">
+                    +44 123 456 7890
+                  </a>
                 </li>
                  <li className="flex items-start space-x-2">
                   <span className="w-4 h-4 shrink-0"></span>

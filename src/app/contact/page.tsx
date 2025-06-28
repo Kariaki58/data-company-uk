@@ -56,7 +56,11 @@ export default function ContactPage() {
                         <Phone className="w-6 h-6 text-primary mt-1" />
                         <div>
                             <h3 className="font-semibold">Call Us</h3>
-                            <p className="text-muted-foreground">+44 123 456 7890</p>
+                            <p className="text-muted-foreground">
+                              <a href="tel:+441234567890" className="hover:underline">
+                                +44 123 456 7890
+                              </a>
+                            </p>
                         </div>
                     </div>
                 </div>
