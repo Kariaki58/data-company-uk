@@ -11,23 +11,42 @@ import { ArrowRight, BarChart, CheckCircle, Cpu, ShieldCheck } from "lucide-reac
 const testimonials = [
   {
     quote: "Working with Sekel Insights transformed our approach to data. Their custom dashboards gave us clarity we never had before, directly impacting our strategic decisions and leading to a 25% increase in operational efficiency.",
-    name: "Alex Johnson",
+    name: "Olivia Johnson",
     title: "CEO, Tech Innovators",
-    avatar: "https://placehold.co/100x100.png"
+    avatar: "/images/image-11.webp"
   },
   {
     quote: "The team at Sekel Hive are true partners. They didn't just deliver a report; they helped us build a data-driven culture. Their training was invaluable for our team.",
-    name: "Samantha Carter",
+    name: "Alex Johnson",
     title: "Head of Operations, Estate Solutions",
-    avatar: "https://placehold.co/100x100.png"
+    avatar: "/images/image-15.jpg"
   },
   {
     quote: "Their automation solutions saved us countless hours of manual work. We can now focus on what truly matters - growing our business. Highly recommended.",
-    name: "David Lee",
+    name: "Emily Roberts",
     title: "Founder, Urban E-commerce",
-    avatar: "https://placehold.co/100x100.png"
+    avatar: "/images/image-16.jpg"
   },
+  {
+    quote: "Sekel's insights helped us uncover trends we had never noticed. Their team is responsive, knowledgeable, and deeply committed to helping clients succeed.",
+    name: "Lena Moore",
+    title: "COO, SmartBuild Systems",
+    avatar: "/images/image-12.webp"
+  },
+  {
+    quote: "We were drowning in data with no direction. Sekel Hive gave us the structure we needed to make real-time decisions that drove a 40% revenue increase.",
+    name: "Carlos Mendes",
+    title: "CMO, BrightPath Logistics",
+    avatar: "/images/image-13.avif"
+  },
+  {
+    quote: "What stood out was their attention to detail. From day one, Sekel Hive understood our industry and tailored every solution to fit us perfectly.",
+    name: "David Lee",
+    title: "Managing Director, Finovate Gulf",
+    avatar: "/images/image-14.jpg"
+  }
 ];
+
 
 const faqItems = [
     {
@@ -200,7 +219,7 @@ export default function Home() {
 
 
       {/* Testimonials */}
-      <section className="py-20 md:py-28">
+      <section className="py-20 md:py-28 relative">
         <div className="container">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">What Our Clients Say</h2>
@@ -229,8 +248,10 @@ export default function Home() {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="absolute -left-4" />
+            <CarouselNext className="absolute -right-4" />
+            {/* <CarouselPrevious />
+            <CarouselNext /> */}
           </Carousel>
         </div>
       </section>

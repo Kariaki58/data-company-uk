@@ -2,14 +2,16 @@
 import Image from "next/image";
 
 const logos = [
-  { name: 'Company A', src: 'https://placehold.co/140x60.png', hint: 'company logo' },
-  { name: 'Company B', src: 'https://placehold.co/140x60.png', hint: 'company logo' },
-  { name: 'Company C', src: 'https://placehold.co/140x60.png', hint: 'company logo' },
-  { name: 'Company D', src: 'https://placehold.co/140x60.png', hint: 'company logo' },
-  { name: 'Company E', src: 'https://placehold.co/140x60.png', hint: 'company logo' },
-  { name: 'Company F', src: 'https://placehold.co/140x60.png', hint: 'company logo' },
-  { name: 'Company G', src: 'https://placehold.co/140x60.png', hint: 'company logo' },
-  { name: 'Company H', src: 'https://placehold.co/140x60.png', hint: 'company logo' },
+  { name: 'Company A', src: '/images/image1.png', hint: 'company logo' },
+  { name: 'Company B', src: '/images/image2.png', hint: 'company logo' },
+  { name: 'Company C', src: '/images/image3.png', hint: 'company logo' },
+  { name: 'Company D', src: '/images/image4.png', hint: 'company logo' },
+  { name: 'Company E', src: '/images/image5.png', hint: 'company logo' },
+  { name: 'Company F', src: '/images/image6.png', hint: 'company logo' },
+  { name: 'Company G', src: '/images/image7.png', hint: 'company logo' },
+  { name: 'Company H', src: '/images/image8.png', hint: 'company logo' },
+  { name: 'Company I', src: '/images/image9.png', hint: 'company logo' },
+  { name: 'Company J', src: '/images/image10.png', hint: 'company logo' },
 ];
 
 export function LogoCloud() {
@@ -21,12 +23,16 @@ export function LogoCloud() {
             {extendedLogos.map((logo, index) => (
             <li key={index}>
                 <Image 
-                    src={logo.src} 
-                    alt={logo.name} 
-                    width={140} 
-                    height={60} 
-                    className="object-contain" 
-                    data-ai-hint={logo.hint}
+                  src={logo.src} 
+                  alt={logo.name} 
+                  width={140} 
+                  height={60} 
+                  className="object-contain max-h-16 max-w-[140px]"
+                  style={{
+                    width: 'auto',
+                    height: 'auto'
+                  }}
+                  data-ai-hint={logo.hint}
                 />
             </li>
             ))}
