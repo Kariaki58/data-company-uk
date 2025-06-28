@@ -4,7 +4,6 @@ import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, BarChart2 } from "lucide-react";
-
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -24,8 +23,9 @@ export function AppHeader() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
-          <BarChart2 className="h-6 w-6 text-primary" />
-          <span className="font-bold font-headline inline-block">Sekel Insights</span>
+          {/* <BarChart2 className="h-6 w-6 text-primary" /> */}
+          <img src="/data-log.svg" alt="logo" className="h-40 w-30"/>
+          {/* <span className="font-bold font-headline inline-block">Sekel Insights</span> */}
         </Link>
         <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
           {navItems.map((item) => (

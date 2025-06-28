@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { BarChart2, Linkedin, Twitter, Mail, Phone } from "lucide-react";
+import { BarChart2, Linkedin, Twitter, Mail, Phone, Instagram } from "lucide-react";
+import { FaTiktok } from "react-icons/fa";
+
 
 export function AppFooter() {
   return (
@@ -7,19 +9,30 @@ export function AppFooter() {
       <div className="container py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center space-x-2 mb-4">
+            <Link href="/" className="mr-6 flex items-center space-x-2">
+              {/* <BarChart2 className="h-6 w-6 text-primary" /> */}
+              <img src="/data-log.svg" alt="logo" className="h-20 w-30"/>
+              {/* <span className="font-bold font-headline inline-block">Sekel Insights</span> */}
+            </Link>
+            {/* <Link href="/" className="flex items-center space-x-2 mb-4">
               <BarChart2 className="h-8 w-8 text-primary" />
               <span className="text-xl font-bold font-headline">Sekel Insights</span>
-            </Link>
+            </Link> */}
             <p className="text-sm text-muted-foreground">
               Actionable insights for data-driven growth.
             </p>
             <div className="flex space-x-4 mt-4">
-              <Link href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary transition-colors">
+              <Link href="https://x.com/dataevangelistx?s=21&t=tSsLPG5Rp4Gy0aVa3-HCIg" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-muted-foreground hover:text-primary transition-colors">
                 <Twitter className="h-5 w-5" />
               </Link>
-              <Link href="#" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors">
+              <Link href="https://www.linkedin.com/in/ifeoluwa-faleye-32bb41134?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors">
                 <Linkedin className="h-5 w-5" />
+              </Link>
+              <Link href="https://www.instagram.com/the_dataevangelist?igsh=cTZnencxbGluODln&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-muted-foreground hover:text-primary transition-colors">
+                <Instagram className="h-5 w-5" />
+              </Link>
+              <Link href="https://www.tiktok.com/@dataevangelist" target="_blank" rel="noopener noreferrer" aria-label="TikTok" className="text-muted-foreground hover:text-primary transition-colors">
+                <FaTiktok />
               </Link>
             </div>
           </div>

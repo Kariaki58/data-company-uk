@@ -6,7 +6,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Sekel Insights - Data Analysis & Automation',
+    default: 'Sekel Insights Data Analysis & Automation',
     template: '%s | Sekel Insights',
   },
   description: 'Unlock actionable insights and drive growth with custom analytics, dashboards, and AI-powered automation solutions. True partners in your growth.',

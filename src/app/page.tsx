@@ -22,7 +22,7 @@ const testimonials = [
     avatar: "/images/image-15.jpg"
   },
   {
-    quote: "Their automation solutions saved us countless hours of manual work. We can now focus on what truly matters - growing our business. Highly recommended.",
+    quote: "Their automation solutions saved us countless hours of manual work. We can now focus on what truly matters growing our business. Highly recommended.",
     name: "Emily Roberts",
     title: "Founder, Urban E-commerce",
     avatar: "/images/image-16.jpg"
@@ -91,6 +91,23 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className="relative bg-secondary py-20 md:py-32">
+        {/* Decorative elements */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-10">
+          <div className="absolute top-20 left-10 w-32 h-32 rounded-full bg-primary blur-xl"></div>
+          <div className="absolute bottom-10 right-10 w-48 h-48 rounded-full bg-accent blur-xl"></div>
+          <div className="absolute top-1/2 right-1/4 w-24 h-24 rounded-full bg-foreground blur-xl"></div>
+        </div>
+        {/* Animated grid pattern in background */}
+        <div className="absolute inset-0 opacity-5">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+          </svg>
+        </div>
         <div className="container text-center">
           <h1 className="text-4xl md:text-6xl font-extrabold tracking-tighter leading-tight">
             Unlock Actionable Insights, Drive Unprecedented Growth

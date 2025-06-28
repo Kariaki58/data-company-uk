@@ -112,7 +112,7 @@ export default function ServicesPage() {
         <div className="container grid md:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-sm font-semibold uppercase text-primary">Proprietary Solutions</span>
-              <h2 className="text-3xl md:text-4xl font-bold mt-2 tracking-tight">A Business Asset—or a Hidden Liability?</h2>
+              <h2 className="text-3xl md:text-4xl font-bold mt-2 tracking-tight">A Business Asset or a Hidden Liability?</h2>
               <p className="mt-4 text-lg text-muted-foreground">
                 Custom-built tools can fuel growth—or drain resources. We offer commercialization strategies that ensure your technology is viable, valuable, and built to last.
               </p>
