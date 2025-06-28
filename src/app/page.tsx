@@ -48,6 +48,25 @@ const faqItems = [
     }
 ];
 
+const processSteps = [
+    {
+      title: 'Discovery & Strategy',
+      description: 'We start by understanding your goals, challenges, and existing data landscape to define a clear roadmap.',
+    },
+    {
+      title: 'Implementation & Build',
+      description: 'Our team gets to work building your custom dashboards, automation tools, and data integrations.',
+    },
+    {
+      title: 'Analysis & Reporting',
+      description: 'We deliver initial insights and train your team on how to use the new tools for maximum impact.',
+    },
+    {
+      title: 'Optimization & Growth',
+      description: 'We continue to partner with you, refining solutions and uncovering new opportunities for growth.',
+    },
+];
+
 export default function Home() {
   return (
     <>
@@ -218,35 +237,26 @@ export default function Home() {
 
       {/* How We Work */}
       <section className="py-20 md:py-28 bg-secondary">
-          <div className="container">
-              <div className="text-center max-w-3xl mx-auto">
-                  <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Our Proven Process for Success</h2>
-                  <p className="mt-4 text-lg text-muted-foreground">We follow a structured, collaborative process to ensure we deliver solutions that meet your unique needs and drive tangible results.</p>
-              </div>
-              <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-                <div className="absolute top-1/2 left-0 w-full h-0.5 bg-border hidden md:block"></div>
-                 <div className="relative flex flex-col items-center text-center">
-                    <div className="absolute -top-12 flex items-center justify-center w-16 h-16 rounded-full bg-primary text-primary-foreground text-2xl font-bold border-4 border-secondary">1</div>
-                    <h3 className="mt-8 text-xl font-semibold">Discovery & Strategy</h3>
-                    <p className="mt-2 text-muted-foreground">We start by understanding your goals, challenges, and existing data landscape to define a clear roadmap.</p>
-                </div>
-                <div className="relative flex flex-col items-center text-center">
-                    <div className="absolute -top-12 flex items-center justify-center w-16 h-16 rounded-full bg-primary text-primary-foreground text-2xl font-bold border-4 border-secondary">2</div>
-                    <h3 className="mt-8 text-xl font-semibold">Implementation & Build</h3>
-                    <p className="mt-2 text-muted-foreground">Our team gets to work building your custom dashboards, automation tools, and data integrations.</p>
-                </div>
-                 <div className="relative flex flex-col items-center text-center">
-                    <div className="absolute -top-12 flex items-center justify-center w-16 h-16 rounded-full bg-primary text-primary-foreground text-2xl font-bold border-4 border-secondary">3</div>
-                    <h3 className="mt-8 text-xl font-semibold">Analysis & Reporting</h3>
-                    <p className="mt-2 text-muted-foreground">We deliver initial insights and train your team on how to use the new tools for maximum impact.</p>
-                </div>
-                 <div className="relative flex flex-col items-center text-center">
-                    <div className="absolute -top-12 flex items-center justify-center w-16 h-16 rounded-full bg-primary text-primary-foreground text-2xl font-bold border-4 border-secondary">4</div>
-                    <h3 className="mt-8 text-xl font-semibold">Optimization & Growth</h3>
-                    <p className="mt-2 text-muted-foreground">We continue to partner with you, refining solutions and uncovering new opportunities for growth.</p>
-                </div>
-              </div>
+        <div className="container">
+          <div className="text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Our Proven Process for Success</h2>
+            <p className="mt-4 text-lg text-muted-foreground">We follow a structured, collaborative process to ensure we deliver solutions that meet your unique needs and drive tangible results.</p>
           </div>
+          <div className="mt-24 relative">
+            <div className="hidden md:block absolute top-8 left-0 right-0 w-3/4 mx-auto h-0.5 bg-border -z-0" />
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-y-16 md:gap-x-8 relative">
+              {processSteps.map((step, index) => (
+                <div key={index} className="flex flex-col items-center text-center">
+                  <div className="relative z-10 flex items-center justify-center w-16 h-16 rounded-full bg-primary text-primary-foreground text-2xl font-bold border-8 border-secondary">
+                    {index + 1}
+                  </div>
+                  <h3 className="mt-6 text-xl font-semibold">{step.title}</h3>
+                  <p className="mt-2 text-muted-foreground">{step.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </section>
 
       {/* FAQ Section */}
