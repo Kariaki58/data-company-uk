@@ -13,7 +13,6 @@ const navItems = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Services" },
-  { href: "/smart-insights", label: "Smart Insights" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -44,7 +43,7 @@ export function AppHeader() {
         </nav>
         <div className="flex flex-1 items-center justify-end gap-2">
           <Button asChild className="hidden md:inline-flex">
-            <Link href="/contact">Get a Quote</Link>
+            <Link href="/contact">Book a Call</Link>
           </Button>
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
@@ -75,7 +74,7 @@ export function AppHeader() {
                   ))}
                 </nav>
                 <Button asChild className="mt-auto">
-                  <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Get a Quote</Link>
+                  <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>Book a Call</Link>
                 </Button>
               </div>
             </SheetContent>
