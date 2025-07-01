@@ -133,7 +133,7 @@ export default function Home() {
             Outdated spreadsheets and generic reports are costing you time, money, and opportunities. Transform your data into actionable intelligence.
           </p>
           {/* Pain points - card grid design */}
-          <div className="mt-16 grid gap-6 sm:grid-cols-3 max-w-5xl mx-auto">
+          <div className="mt-16 gap-10 flex flex-wrap justify-center max-w-5xl mx-auto">
             <div className="relative bg-background/80 backdrop-blur-sm p-6 rounded-xl border border-border/20 shadow-sm hover:shadow-md transition-shadow">
               <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-destructive flex items-center justify-center shadow-sm">
                 <X className="h-5 w-5 text-destructive-foreground" />
@@ -156,6 +156,13 @@ export default function Home() {
               </div>
               <h3 className="text-lg font-semibold mb-3">Guesswork Decisions</h3>
               <p className="text-muted-foreground">Lack of real-time analytics forces reliance on intuition</p>
+            </div>
+            <div className="relative bg-background/80 backdrop-blur-sm p-6 rounded-xl border border-border/20 shadow-sm hover:shadow-md transition-shadow">
+              <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-destructive flex items-center justify-center shadow-sm">
+                <X className="h-5 w-5 text-destructive-foreground" />
+              </div>
+              <h3 className="text-lg font-semibold mb-3">Reacting to change, not driving it</h3>
+              <p className="text-muted-foreground">Chasing trends rather than setting them</p>
             </div>
           </div>
 
