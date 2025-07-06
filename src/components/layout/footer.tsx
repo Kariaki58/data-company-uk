@@ -11,7 +11,7 @@ export function AppFooter() {
           <div className="md:col-span-1">
             <Link href="/" className="mr-6 flex items-center space-x-2">
               {/* <BarChart2 className="h-6 w-6 text-primary" /> */}
-              <img src="/data-log.svg" alt="logo" className="h-20 w-30"/>
+              <img src="/logo-view.png" alt="logo" className="h-20 w-30"/>
               {/* <span className="font-bold font-headline inline-block">Sekel Insights</span> */}
             </Link>
             {/* <Link href="/" className="flex items-center space-x-2 mb-4">

@@ -24,7 +24,7 @@ export function AppHeader() {
       <div className="container flex h-16 items-center">
         <Link href="/" className="mr-6 flex items-center space-x-2">
           <img 
-            src="/data-log.svg" 
+            src="/logo-view.png" 
             alt="logo" 
             className="h-20 w-auto object-contain" 
           />
