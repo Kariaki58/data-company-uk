@@ -58,7 +58,7 @@ export default function ContactPage() {
                             <h3 className="font-semibold">Call Us</h3>
                             <p className="text-muted-foreground">
                               <a href="tel:+441234567890" className="hover:underline">
-                                +44 123 456 7890
+                                +447407320622
                               </a>
                             </p>
                         </div>
