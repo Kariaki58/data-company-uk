@@ -58,7 +58,7 @@ export function AppFooter() {
               <ul className="space-y-3 text-sm text-muted-foreground">
                 <li className="flex items-center space-x-2">
                   <Mail className="h-4 w-4 shrink-0" />
-                  <a href="mailto:contact@sekelinsights.com" className="hover:text-primary transition-colors">contact@sekelinsights.com</a>
+                  <a href="mailto:contact@sekelhive.com" className="hover:text-primary transition-colors">contact@sekelhive.com</a>
                 </li>
                 <li className="flex items-center space-x-2">
                   <Phone className="h-4 w-4 shrink-0" />
