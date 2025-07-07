@@ -1,7 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
-import emailjs from "@emailjs/browser";
+import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
@@ -35,7 +34,6 @@ const formSchema = z.object({
 
 export function ContactForm() {
   const { toast } = useToast();
-  const formRef = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -51,37 +49,23 @@ export function ContactForm() {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
 
-    if (
-      !process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ||
-      !process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ||
-      !process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-    ) {
-      toast({
-        variant: "destructive",
-        title: "Configuration Error",
-        description: "Email service is not configured correctly. Please contact support.",
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
       });
-      setIsSubmitting(false);
-      return;
-    }
 
-    if (!formRef.current) {
-        setIsSubmitting(false);
+      if (!response.ok) {
         toast({
-            variant: "destructive",
-            title: "Error",
-            description: "Could not submit form. Please try again.",
+          variant: "destructive",
+          title: "Oh no! Something went wrong.",
+          description: "There was a problem sending your message. Please try again later.",
         });
         return;
-    }
-
-    try {
-      await emailjs.sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-        formRef.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-      );
+      }
 
       toast({
         title: "Message Sent!",
@@ -89,7 +73,6 @@ export function ContactForm() {
       });
       form.reset();
     } catch (error) {
-      console.error("EmailJS error:", error);
       toast({
         variant: "destructive",
         title: "Oh no! Something went wrong.",
@@ -102,34 +85,34 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form ref={formRef} onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <FormField
+          <FormField
             control={form.control}
             name="name"
             render={({ field }) => (
-                <FormItem>
+              <FormItem>
                 <FormLabel>Full Name</FormLabel>
                 <FormControl>
-                    <Input placeholder="John Doe" {...field} />
+                  <Input placeholder="John Doe" {...field} />
                 </FormControl>
                 <FormMessage />
-                </FormItem>
+              </FormItem>
             )}
-            />
-            <FormField
+          />
+          <FormField
             control={form.control}
             name="email"
             render={({ field }) => (
-                <FormItem>
+              <FormItem>
                 <FormLabel>Email Address</FormLabel>
                 <FormControl>
-                    <Input placeholder="you@company.com" {...field} />
+                  <Input placeholder="you@company.com" {...field} />
                 </FormControl>
                 <FormMessage />
-                </FormItem>
+              </FormItem>
             )}
-            />
+          />
         </div>
         <FormField
           control={form.control}
@@ -162,8 +145,8 @@ export function ContactForm() {
           )}
         />
         <Button type="submit" size="lg" className="w-full md:w-auto" disabled={isSubmitting}>
-            {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-            Send Message
+          {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+          Send Message
         </Button>
       </form>
     </Form>
